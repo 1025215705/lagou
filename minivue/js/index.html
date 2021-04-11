@@ -10,14 +10,18 @@
     <h1>{{count}}</h1>
     </div>
 </body>
+<script src="observer.js"></script>
 <script src="vue.js"></script>
 <script>
       let vm = new Vue({
        el:"#app",
        data:{
            msg:"hello vue",
-           count:100
+           count:100,
+           person:{name:'zs'}
        }
 })
+ console.log(vm.msg);
+ vm.msg = {test :" hello"};
 </script>
 </html>
