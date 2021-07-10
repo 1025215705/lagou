@@ -9,13 +9,14 @@ class Vue{
      //3 调用observer ,监听数据的变化
      new Observer(this.$data);
      //4 调用compiler 对象， 解析指令和差值表达式
+     new Compiler(this);
     }
     _proxyData(data){
      //遍历data 中的属性
      Object.keys(data).forEach(key=>{
          console.log(key);
          Object.defineProperty(this, key,{
-             enumerable:true,
+             enumerable:true, // 如果可枚举，属性是对象循环
              configurable:true,
              get(){
                  return data[key];

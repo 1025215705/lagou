@@ -8,10 +8,19 @@
     <div id="app">
     <h1>{{msg}}</h1>
     <h1>{{count}}</h1>
+    <h1>v-text</h1>
+    <div v-text="msg"></div>
+    <h1>v-model</h1>
+    <input type="text" v-model="msg">
+    <input type="text" v-model="count"> 
     </div>
 </body>
+<script src="dep.js"></script>
+<script src="watcher.js"></script>
+<script src="compiler.js"></script>
 <script src="observer.js"></script>
 <script src="vue.js"></script>
+
 <script>
       let vm = new Vue({
        el:"#app",
@@ -22,6 +31,6 @@
        }
 })
  console.log(vm.msg);
- vm.msg = {test :" hello"};
+ //vm.msg = {test :" hello"};
 </script>
 </html>
